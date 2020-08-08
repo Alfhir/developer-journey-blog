@@ -1,11 +1,54 @@
 ---
-title: Mission Statement
+title: Get your hands dirty on clean architecture by Tom Hombergs
 date: 2020-08-08
-description: Why should you read this?
+description: A review for the book by Tom Hombergs (2019)
 tags:
-  - Personal
+  - Book Reviews
 banner: ./library.jpg
-slug: "/foo"
 ---
 
-![Library](./library.jpg)
+Homberg's book starts with the down-to-earth question:
+
+> What's wrong with layers?
+
+*[Tongue-in-cheek]: Yeah, what's wrong with them? Isn't every architect supposed to [leave a footprint][GeekAndPoke]?*
+
+[![a comic strip where one guy tells the other that they gave up on finding names for the layers of their software layers and instead named them after their architects](https://images.squarespace-cdn.com/content/v1/518f5d62e4b075248d6a3f90/1373745203932-FY5OM0GGKZ3T2XIM9HMQ/ke17ZwdGBToddI8pDm48kMjasjQ5vHSrE4vyy4Ye2dF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0vIHRucUU7a1Vci15HXS8HJMsCLbaTKQDWw2x2-mp2korvyeRU0zE932p8NLIfwQYw/footprints2.jpg?format=300w)](http://geek-and-poke.com/geekandpoke/2013/7/13/foodprints)
+
+His arguments *against* a layered architecture are, that
+
+- it promotes database-driven design,
+- it is prone to shortcuts,
+- it grows hard to test,
+- it hides the use cases,
+- it makes parallel work difficult.
+
+He then recaps some of the [SOLID] principles and gives a coarse explanation of hexagonal architecture.
+
+Before evolving an example implemented with Spring, he states his opinion about „How to organize code“.
+
+*Hear, Hear! By that time I was glad I bought the book. For me, those chapters also could have been named
+“Five things you dislike about your current project, __PLUS__ the one thing that really gets you mad!“*
+
+After that, the reader learns how one implements a Use-Case, a Web-Adapter and a Persistence-Adapter. Every chapter closes with the recurring question: "How does this help me write maintainable software?".
+
+The final chapters cover Testing, various ways of enforcing boundaries and different mapping strategies.
+
+The book closes with a chapter on "Taking shortcuts consciously" and some hints for deciding on an architectural style.
+
+The book has a nice and easy-to-read flow and almost zero filler. I thought, that introducing the [Broken windows theory](https://en.wikipedia.org/wiki/Broken_windows_theory)
+in analogy to deteriorating codebases was a bit far-fetched, but that‘s nitpicking!
+
+I really liked Hombergs well-balanced reasoning and felt like he is sincere in his intention to share his knowledge and experiences,
+to enable his readers to make their own informed decisions, that fit their situations best.
+
+Don't miss to check out [Homberg's Blog][Reflectoring]!
+
+---
+
+If you speak german and enjoy the topic "Clean Architecture", you might enjoy this [talk][CoseeTechTalk].
+
+[CoseeTechTalk]: <https://www.youtube.com/watch?v=DSIlx5c_72Q>
+[Reflectoring]: <https://reflectoring.io/>
+[SOLID]: <https://en.wikipedia.org/wiki/SOLID>
+[GeekAndPoke]: <http://geek-and-poke.com/geekandpoke/2013/7/13/foodprints>
