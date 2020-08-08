@@ -9,7 +9,7 @@ module.exports = {
     siteTitle: `Alfhirs Blog`,
     siteTitleAlt: `Alfhirs Blog`,
     siteHeadline:  `Alfhirs Blog`,
-    siteUrl: ``,
+    siteUrl: `https://elegant-johnson-909fa4elegant-johnson-909fa4.netlify.app`,
     siteDescription: `Blogging about Kotlin, Javascript and interesting things`,
     siteLanguage: `de`,
     siteImage: `/library.jpg`,
