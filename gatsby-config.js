@@ -10,7 +10,7 @@ module.exports = {
     siteTitleAlt: `Alfhirs Blog`,
     siteHeadline:  `Alfhirs Blog`,
     siteUrl: ``,
-    siteDescription: `Blogging about Gardening, Kotlin, Javascript and interesting things`,
+    siteDescription: `Blogging about Kotlin, Javascript and interesting things`,
     siteLanguage: `de`,
     siteImage: `/library.jpg`,
     author: `@alfhir80`,
