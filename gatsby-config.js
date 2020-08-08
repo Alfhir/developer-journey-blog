@@ -1,19 +1,19 @@
 require(`dotenv`).config({
   path: `.env`,
-})
+});
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
 module.exports = {
   siteMetadata: {
-    siteTitle: `Foo`,
-    siteTitleAlt: `A foos story`,
-    siteHeadline: `Foo Headline`,
+    siteTitle: `Alfhirs Blog`,
+    siteTitleAlt: `Alfhirs Blog`,
+    siteHeadline:  `Alfhirs Blog`,
     siteUrl: ``,
-    siteDescription: `foo foo foo`,
-    siteLanguage: `en`,
-    siteImage: `https://images.unsplash.com/photo-1517976487492-5750f3195933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80`,
-    author: ``,
+    siteDescription: `Blogging about Gardening, Kotlin, Javascript and interesting things`,
+    siteLanguage: `de`,
+    siteImage: `/library.jpg`,
+    author: `@alfhir80`,
   },
   plugins: [
     {
@@ -33,7 +33,7 @@ module.exports = {
         externalLinks: [
           {
             name: `Twitter`,
-            url: `https://twitter.com/`,
+            url: `https://twitter.com/alfhir80`,
           }
         ],
       },
@@ -48,9 +48,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `foo-blog - a foos story`,
-        short_name: `foo-blog`,
-        description: ``,
+        name: `Alfhirs Blog`,
+        short_name: `Alfhirs Blog`,
+        description: `A personal blog about Gardening, Kotlin, Javascript and interesting things`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
@@ -69,4 +69,4 @@ module.exports = {
       },
     },
   ].filter(Boolean),
-}
+};
