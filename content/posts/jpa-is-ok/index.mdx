@@ -1,0 +1,70 @@
+---
+title: JPA is OK
+date: 2020-08-24
+description: Writing is hard
+tags:
+  - Personal
+---
+
+Writing a developer journey is harder than I thought. I can't think of a title that doesn't sound silly and
+I am afraid, that someone will tell me how embarrassing and irrelevant this is. Anyway... 頑張ろう!
+
+I had spent the last two weeks working on some feature that involved reworking entities and queries.
+My coworker had a very similar task, but his table had surrogate keys while mine had natural keys.
+The bottom line of the story is: I realized that natural keys are beautiful and feasible, but not as practical as having a surrogate key.
+Having a generated ID _and_ some natural ID with a unique constraint on it (resp. on the columns that form a candidate key) might be
+a good compromise. As I'm too lazy to type out code to explain what I mean, I'll have to link you to this [article].
+
+Along the way I got to know some pitfalls with [equals() and  hashCode()] with Hibernate one has to mind when using [Hibernate with Kotlin] or [Lombok & Hibernate].
+The [Spring Boot Kotlin Guide] mentions that data classes and JPA are not a good fit and I ended up with exactly that:
+
+>  Also, it's a bit cumbersome to implement such behavior with data classes since we'd have to put the natural key parts
+>  into the primary constructor and everything else in the class body, the caller would have to set properties after construction.
+>  This does not feel right, so let's not do it...
+([Hibernate with Kotlin])
+
+I don't agree, that setting properties after construction feels wrong, but I agree that Kotlin data classes and JPA entities are not a good fit.
+So let's save the data-classes for everything else than JPA-entities.
+
+Looking back, It really was fun doing lots of Hibernate. Starting with rather unusual looking [derived queries] that traverse part of a [composite primary key],
+to custom Spring Data queries that use typed queries via the entity manager under the hood, I feel much more comfortable with Hibernate now.
+
+Learning always pays off: Yesterday I could give a working student a hint about using data classes with JPA.
+And as he searched for an abstraction that would ~~rule them all~~ both fit Mongo- and JPA-Entities,
+I told him about my experiences with wrong abstractions and that therefore I'd like to have a motivational poster that says:
+
+> Duplication is far cheaper than the wrong abstraction ([Sandy Metz])
+
+Though I didn't use it, reading about Hibernate lead me to reading about [JOOQ]. I don't know how many years ago I heard of JOOQ for the first time.
+At that time it made a lot more sense to me than this ORM stuff I only had heard of.
+JPA seemed like "real enterprise stuff" to me and back then at work (meaning assisting researchers at the university) we didn't use ORMs - we connected via JDBC and wrote SQL.
+
+Thinking about databases and SQL, I am remembering how [Alejandro Buchmann] once offered me a free retry for my miserably botched oral exam in
+[Database Systems II] and how he had said one of the nicest things anyone ever said to me (roughly memorized):
+
+> "I don't know what was wrong today...I thought you'd do better...But I firmly believe, that if you'll ever need it, **you can do it!**"
+
+As cocky as it may sound: He was right. I can do it. Everyday. Like a man!
+
+[![Elfman from the anime Fairy Tail](http://images.wikia.com/fairytail/images/c/cf/Elfman_prof.jpg)
+
+
+## Resources ##
+
+This guys will give you a headstart with JPA / Hibernate!
+- [Vlad Mihalcea]
+- [Thorben Janssen]
+
+[Sandy Metz]: <https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction>
+[equals() and  hashCode()]: <https://thorben-janssen.com/ultimate-guide-to-implementing-equals-and-hashcode-with-hibernate/>
+[Lombok & Hibernate]: <https://thorben-janssen.com/lombok-hibernate-how-to-avoid-common-pitfalls/#Don8217t_Use_EqualsAndHashCode>
+[Hibernate with Kotlin]: <https://kotlinexpertise.com/hibernate-with-kotlin-spring-boot/>
+[Spring Boot Kotlin Guide]: <https://github.com/spring-guides/tut-spring-boot-kotlin#persistence-with-jpa>
+[derived queries]: <https://thorben-janssen.com/ultimate-guide-derived-queries-with-spring-data-jpa/#Traverse_associations_in_derived_queries>
+[composite primary key]: <https://vladmihalcea.com/the-best-way-to-map-a-composite-primary-key-with-jpa-and-hibernate/>
+[Vlad Mihalcea]: <https://vladmihalcea.com/tutorials/hibernate/>
+[Thorben Janssen]: <https://thorben-janssen.com>
+[article]: <https://tapoueh.org/blog/2018/03/database-normalization-and-primary-keys/#primary-keys>
+[JOOQ]: <https://www.jooq.org/>
+[Alejandro Buchmann]: <http://www.dvs.tu-darmstadt.de/staff/buchmann/index.html>
+[Database Systems II]: <http://www.dvs.tu-darmstadt.de/teaching/db2/index.html>
