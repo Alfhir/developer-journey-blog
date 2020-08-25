@@ -15,7 +15,7 @@ The bottom line of the story is: I realized that natural keys are beautiful and 
 Having a generated ID _and_ some natural ID with a unique constraint on it (resp. on the columns that form a candidate key) might be
 a good compromise. As I'm too lazy to type out code to explain what I mean, I'll have to link you to this [article].
 
-Along the way I got to know some pitfalls with [equals() and  hashCode()] with Hibernate one has to mind when using [Hibernate with Kotlin] or [Lombok & Hibernate].
+Along the way I got to know some pitfalls with [equals() and  hashCode()] with Hibernate one has to mind when using Hibernate with Kotlin or [Lombok & Hibernate].
 The [Spring Boot Kotlin Guide] mentions that data classes and JPA are not a good fit and I ended up doing it the way [this article] describes:
 
 >  Also, it's a bit cumbersome to implement such behavior with data classes since we'd have to put the natural key parts
