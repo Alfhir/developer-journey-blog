@@ -10,7 +10,7 @@ Writing a developer journey is harder than I thought. I can't think of a title t
 I am afraid, that someone will tell me how embarrassing and irrelevant this is. Anyway... 頑張ろう!
 
 I had spent the last two weeks working on some feature that involved reworking entities and queries.
-My coworker had a very similar task, but his table had surrogate keys while mine had natural keys.
+My coworker had a very similar task, but the tables he needed to use had surrogate keys, while the ones related to my part of work had natural keys.
 The bottom line of the story is: I realized that natural keys are beautiful and feasible, but not as practical as having a surrogate key.
 Having a generated ID _and_ some natural ID with a unique constraint on it (resp. on the columns that form a candidate key) might be
 a good compromise. As I'm too lazy to type out code to explain what I mean, I'll have to link you to this [article].
@@ -26,8 +26,9 @@ The [Spring Boot Kotlin Guide] mentions that data classes and JPA are not a good
 I don't agree, that setting properties after construction feels wrong, but I agree that Kotlin data classes and JPA entities are not a good fit.
 So let's save the data-classes for everything else than JPA-entities.
 
-Looking back, It really was fun doing lots of Hibernate. Starting with rather unusual looking [derived queries] that traverse part of a [composite primary key],
-to custom Spring Data queries that use typed queries via the entity manager under the hood, I feel much more comfortable with Hibernate now.
+It really was fun doing lots of Hibernate. From rather unusual looking [derived queries] that traverse part of a [composite primary key]
+to custom Spring Data queries that use typed queries via the entity manager, I got to know a lot of different ways to use Hibernate with Spring Data.
+I feel much more comfortable with Hibernate now!
 
 Learning always pays off: Yesterday I could give a working student a hint about using data classes with JPA.
 And as he searched for an abstraction that would ~~rule them all~~ both fit Mongo- and JPA-Entities,
