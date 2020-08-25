@@ -16,12 +16,12 @@ Having a generated ID _and_ some natural ID with a unique constraint on it (resp
 a good compromise. As I'm too lazy to type out code to explain what I mean, I'll have to link you to this [article].
 
 Along the way I got to know some pitfalls with [equals() and  hashCode()] with Hibernate one has to mind when using [Hibernate with Kotlin] or [Lombok & Hibernate].
-The [Spring Boot Kotlin Guide] mentions that data classes and JPA are not a good fit and I ended up with exactly that:
+The [Spring Boot Kotlin Guide] mentions that data classes and JPA are not a good fit and I ended up doing it the way [this article] describes:
 
 >  Also, it's a bit cumbersome to implement such behavior with data classes since we'd have to put the natural key parts
 >  into the primary constructor and everything else in the class body, the caller would have to set properties after construction.
 >  This does not feel right, so let's not do it...
-([Hibernate with Kotlin])
+
 
 I don't agree, that setting properties after construction feels wrong, but I agree that Kotlin data classes and JPA entities are not a good fit.
 So let's save the data-classes for everything else than JPA-entities.
@@ -58,7 +58,7 @@ This guys will give you a headstart with JPA / Hibernate!
 [Sandy Metz]: <https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction>
 [equals() and  hashCode()]: <https://thorben-janssen.com/ultimate-guide-to-implementing-equals-and-hashcode-with-hibernate/>
 [Lombok & Hibernate]: <https://thorben-janssen.com/lombok-hibernate-how-to-avoid-common-pitfalls/#Don8217t_Use_EqualsAndHashCode>
-[Hibernate with Kotlin]: <https://kotlinexpertise.com/hibernate-with-kotlin-spring-boot/>
+[this article]: <https://kotlinexpertise.com/hibernate-with-kotlin-spring-boot/>
 [Spring Boot Kotlin Guide]: <https://github.com/spring-guides/tut-spring-boot-kotlin#persistence-with-jpa>
 [derived queries]: <https://thorben-janssen.com/ultimate-guide-derived-queries-with-spring-data-jpa/#Traverse_associations_in_derived_queries>
 [composite primary key]: <https://vladmihalcea.com/the-best-way-to-map-a-composite-primary-key-with-jpa-and-hibernate/>
